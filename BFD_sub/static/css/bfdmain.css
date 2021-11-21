@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#header {
+    height: 5rem;
+    background-image: -webkit-linear-gradient(333deg,rgba(255,255,255,1.00) 68.47%,rgba(235,18,18,1.00) 100%);
+    background-image: -moz-linear-gradient(333deg,rgba(255,255,255,1.00) 68.47%,rgba(235,18,18,1.00) 100%);
+    background-image: -o-linear-gradient(333deg,rgba(255,255,255,1.00) 68.47%,rgba(235,18,18,1.00) 100%);
+    background-image: linear-gradient(117deg,rgba(255,255,255,1.00) 68.47%,rgba(235,18,18,1.00) 100%);
+    border: 1em double #000000;
+    font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+    vertical-align: text-bottom;}
+.navbar.navbar-expand-lg.navbar-light.bg-light .navbar-brand {
+    text-transform: uppercase;
+    text-shadow: 0px 0px #DF2528;
+    letter-spacing: 5px;
+    color: #E22023;
+    font-weight: 400;
+    font-size: x-large;
+    vertical-align: middle;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+    background-image: -webkit-linear-gradient(151deg,rgba(66,113,255,1.00) 0%,rgba(255,0,0,1.00) 100%);
+    background-image: -moz-linear-gradient(151deg,rgba(66,113,255,1.00) 0%,rgba(255,0,0,1.00) 100%);
+    background-image: -o-linear-gradient(151deg,rgba(66,113,255,1.00) 0%,rgba(255,0,0,1.00) 100%);
+    background-image: linear-gradient(299deg,rgba(66,113,255,1.00) 0%,rgba(255,0,0,1.00) 100%);
+}
+.logo {
+    width: 4rem;
+    height: 4rem;
+    background-image: url(IS%20403/BigFatLogos/BFD_Logo_Large.png);
+    background-size: 6rem auto;
+    background-position: 45% -9%;
+    float: left;
+}
+.nav-link {
+    position: relative;
+    left: 50%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.carousel-caption {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    width: 25rem;
+    height: 25rem;
+    font-weight: bolder;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+    letter-spacing: 10px;
+    font-size: xx-large;
+    text-transform: uppercase;
+    text-shadow: 0px 0px;
+    transform: translatex(-50%);
+}
+.go-to {
+    border-radius: 25px;
+    margin-top: 23px;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    font-weight: bold;
+    font-size: small;
+    padding-top: 14px;
+    padding-right: 20px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+}
