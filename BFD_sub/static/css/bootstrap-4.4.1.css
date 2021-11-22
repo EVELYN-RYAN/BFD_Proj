@@ -3173,7 +3173,7 @@ input[type="button"].btn-block {
 }
 
 .collapse:not(.show) {
-  display: none;
+    display: none;
 }
 
 .collapsing {
@@ -4236,8 +4236,9 @@ input[type="button"].btn-block {
 }
 
 .nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    margin-right: 29px;
 }
 
 .nav-link:hover, .nav-link:focus {

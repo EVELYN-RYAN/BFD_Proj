@@ -8,7 +8,7 @@ from django.shortcuts import redirect
 # Create your views here.
 
 
-def orderPageView(request):
+def createOrderPageView(request):
     return render(request, 'createOrder/createOrder.html')
 
 

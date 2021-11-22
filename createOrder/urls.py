@@ -6,11 +6,12 @@ from .views import cookie_session
 from .views import cookie_delete
 from .views import create_session
 from .views import access_session
+from .views import createOrderPageView
 
 
 # we create the path with this syntax
 urlpatterns = [
-
+    path('createOrder/', createOrderPageView,name="createOrder"),
     path('testcookie/', cookie_session, name='cookie'),
     path('deletecookie/', cookie_delete, name='cookieDelete'),
     path('create/', create_session),

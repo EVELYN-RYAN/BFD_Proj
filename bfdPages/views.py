@@ -8,11 +8,12 @@ def indexPageView(request):
 
 
 def aboutPageView(request):
-    return HttpResponse("About Page")
+    return render(request, "bfdPages/about.html")
 
 
 def productPageView(request):
-    return HttpResponse("Product list page")
+    return render(request, "bfdPages/products.html")
 
-def orderPageView(request) :
-    return HttpResponse("Order page")
+
+def createorderPageView(request) :
+    return render(request, "createOrder/createOrder.html")

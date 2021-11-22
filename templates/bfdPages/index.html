@@ -1,72 +1,36 @@
-<!--
-    FORMS NEED ON THIS PAGE
-
-    Nothing on the page
--->
-
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BFD Home</title>
-<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
-
-<link href="css/bfdmain.css" rel="stylesheet" type="text/css">
-</head>
-
-<body class="top">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<div class="logo"> 
-		<img src="BFD_Logo.png" width="150%" href="#" alt="BFD logo">
-		
-	</div>
-  
-  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
-      <li class="nav-item"> <a class="nav-link" href="#">Order Now&nbsp;</a> </li>
-      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> More&nbsp;</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="#">Our Products</a> <a class="dropdown-item" href="#">Past Jobs</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">About Us</a> 
-          <a class="dropdown-item" href="#">Contact</a>
-          </div>
-      </li>
-      <li class="nav-item"> <a class="nav-link disabled" href="#">Admin&nbsp;</a> </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-    </form>
-  </div>
-</nav>
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
  <div class="landing">
-   <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" data-interval="false" style="background-color: black">
+   <div id="carouselExampleIndicators1" style="background-image:url({% static 'img/Scatter.jpg'%})" class="carousel slide" data-ride="carousel" data-interval="false">
      <ol class="carousel-indicators">
        <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
        <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
      </ol>
      <div class="carousel-inner" role="listbox">
-       <div class="carousel-item active"><img class="d-block mx-auto" src="images/Diamond.png" width="100%" height="100%" alt="First slide">
+       <div class="carousel-item active"><img class="d-block mx-auto" src="{% static 'img/Diamond.png'%}" style="background-color:black" width="100%" height="100%" alt="First slide">
            
          <div class="carousel-caption">
-          WELCOME TO BIG FAT DESIGN <br>
+           <div class="CenterTitle">
+               <h6 class="welcome">WELCOME TO</h6>
+               <img class="Maintitle" src="{% static 'img/BFD_Logo_Cut.png'%}"><br><br><br>
              <button class="go-to" onClick="#">CHECK THIS OUT</button>
+           </div> 
          </div>
            
        </div>  
-       <div class="carousel-item" data-interval="false"> <img class="d-block mx-auto" src="images/DiamondFlip.png" width="100%" height="100%" alt="Second slide">
+       <div class="carousel-item" data-interval="false"> <img class="d-block mx-auto" src="{% static 'img/DiamondFlip.png' %}" width="100%" height="100%" alt="Second slide">
            <div class="carousel-caption">
-           Making small business's <br> go big
+                <div class="CenterTitle">
+                   Making small business's <br> go big
+                </div>
            </div>
          
        </div>
      </div>
-     <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+     <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> 
+     <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> 
+     <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> 
+     <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
  </div>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap-4.4.1.js"></script>
-
-</body>
-</html>
+{% endblock body %}
