@@ -1,46 +1,47 @@
 from django.shortcuts import render
-# this view function needs to send the RESPONSE
+from django.shortcuts import render
+from django.shortcuts import render
 from django.http import HttpResponse
-
-# redirect
-from django.shortcuts import redirect
-
-# Create your views here.
+# HERE, I need to import the HTML page that I want and then i can return it LATER
+from createOrder.models import Employee, job_order, ticket
 
 
-def createOrderPageView(request):
+################# Create your views here. ################
+
+##### This pulls up the createOrder page ##########
+def orderPageView(request):
     return render(request, 'createOrder/createOrder.html')
 
 
-# these are for the sessions, which were not working ################3
-def cookie_session(request):
-    request.session.set_test_cookie()
-    return HttpResponse("<h1>dataflair</h1>")
+################### THIS is not displayed to the customer, it will MAKE an order ################
+def storeOrderPageView(request):
+    # Create a new ticket object from the model (like a new record)
+    new_order = job_order()
+
+    # Store the data from the form to the new object's attributes (like columns)
+    new_order.order_id = request.POST.get('order_id')
+    new_order.product_id = request.POST.get('product_id')
+    new_order.employee_id = request.POST.get('employee_id')
+    new_order.confirmed_date = request.POST.get('confirmed_date')
+    new_order.status = request.POST.get('status')
+    new_order.status_change_date = request.POST.get('status_change_date')
+    new_order.filing_cabinet = request.POST.get('filing_cabinet')
+    new_order.file_name = request.POST.get('file_name')
+    new_order.notes = request.POST.get('notes')
+
+    # Save the ticket information record which will generate the autoincremented id
+    new_order.save()
+
+    # Make a list of all of the employee records and store it to the variable
+    data = job_order.objects.all()
+
+    # Assign the list of employee records to the dictionary key "our_emps"
+    context = {
+        "our_ticket": data
+    }
+    return render(request, 'trackOrders/displayOrders.html', context)
 
 
-def cookie_delete(request):
-    if request.session.test_cookie_worked():
-        request.session.delete_test_cookie()
-        response = HttpResponse("dataflair<br> cookie createed")
-    else:
-        response = HttpResponse(
-            "Dataflair <br> Your browser doesnot accept cookies")
-    return response
-
-
-def create_session(request):
-    request.session['name'] = 'username'
-    request.session['password'] = 'password123'
-    return HttpResponse("<h1>dataflair<br> the session is set</h1>")
-
-
-def access_session(request):
-    response = "<h1>Welcome to Sessions of dataflair</h1><br>"
-    if request.session.get('name'):
-        response += "Name : {0} <br>".format(request.session.get('name'))
-    if request.session.get('password'):
-        response += "Password : {0} <br>".format(
-            request.session.get('password'))
-        return HttpResponse(response)
-    else:
-        return redirect('create/')
+############## this is a display of the FINAL orders created by customers ##############
+def OrdersSummaryView(request):
+    return render(request, "trackOrders/displayOrders.html")

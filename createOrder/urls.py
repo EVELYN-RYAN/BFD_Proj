@@ -2,18 +2,13 @@
 from django.urls import path
 
 # This is accessing the views/funcitons that we wrote on views.py!!
-from .views import cookie_session
-from .views import cookie_delete
-from .views import create_session
-from .views import access_session
-from .views import createOrderPageView
+from .views import orderPageView, storeOrderPageView, OrdersSummaryView
 
 
 # we create the path with this syntax
 urlpatterns = [
-    path('createOrder/', createOrderPageView,name="createOrder"),
-    path('testcookie/', cookie_session, name='cookie'),
-    path('deletecookie/', cookie_delete, name='cookieDelete'),
-    path('create/', create_session),
-    path('access', access_session)
+    path("createorder/", orderPageView, name="orders"),
+    path("storeorder/", storeOrderPageView, name='storeorder'),
+    path("order/", OrdersSummaryView, name="orders"),
+    path("orders/", OrdersSummaryView, name="orders")
 ]
