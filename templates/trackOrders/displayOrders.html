@@ -9,5 +9,130 @@
 ########## DETAILS of this FORM ##############
 # 1. Shows a list of all the orders still unconfirmed
 #
+
+product_id/productname
+quantity
+quoted_price
+order_notes
+
+
+
+
+
+
+
+
+<!--
+    this needs to show the drugs that they have prescribed, and the average number of each type of drug that all prescribers prescribe.
+-->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% comment %} {% endblock %}
+
+{% extends 'base.html' %}
+{%block content%}
+{%load static %} {% endcomment %}
+<!-- <link href="file:///Macintosh%20HD/Users/Evelyn/Desktop/IS%20403/BigFatLogos/github/INTEX_Project/OpioidAbuse/static/css/our.css" rel="stylesheet" type="text/css"> -->
+
+<br><br><br>
+<section>
+        <div class="parent">
+            <div class="intro">
+                <div class="intro-text">
+                  <h1>Search Results</h1>
+                  {% comment %} <h3>Real hard stuff to swollow goes here&nbsp;</h3> {% endcomment %}
+                  <p>Select the person you want to see more drug results for by clicking the button. </p>
+                </div>
+                <a class="mybutton" href="{% url 'allPrescribers' %}">See all prescribers</a>
+                <br>
+                <a class="mybutton" href="{% url 'searchPrescriber' %}">Find another prescriber</a>
+            </div>
+            <div class="card">
+                <table>
+                    <tr>
+                        {% comment %} <th></th>
+                        <th>NPI</th> {% endcomment %}
+                        <th style="text-align: center;">Confirm</th>
+                        <th style="text-align: center;">Product Name</th>
+                        <th style="text-align: center;">Quantity Ordered</th>
+                        <th style="text-align: center;">Quoted Price</th>
+                        <th style="text-align: center;">Notes</th> 
+                        <th style="text-align: center;">Deny</th>
+                        
+                    </tr>
+
+        {% for order in our_orders %}           
+                    <tr>
+                        <td>
+                            <a class="mybutton2" href="{% url 'confirmOrder' %}">Edit</a>
+                        </td>
+                        <td style="text-align: center;">
+                            <form name='form' method="get" action = {% url 'show_prescribed_drugs' %}>
+                                <label for='NPI' ></label>
+                                <input type="text"  name='NPI' id='NPI' hidden value={{prescriber.npi}}> 
+                                    <button type = "submit">Click Me!</button>
+                            </form>        
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.fname}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.lname}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.gender}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.state}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.credentials}}
+                        </td>
+                        <td style="text-align: center;">
+                                {{prescriber.specialty}}
+                        </td>
+                        <td style="text-align: center;">
+                            {{prescriber.isopioidprescriber}}
+                        </td>
+                        <td style="text-align: center;">
+                            {{prescriber.totalprescriptions}}
+                        </td>
+                        <td>
+                            <a class="mybutton2"href="{% url 'deletePrescriber' NPI=prescriber.npi %}">Delete</a>
+                        </td>
+                    </tr>
+        {% endfor %} 
+        </table>
+            </div>
+
+            
+        </div>
+    
+    </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<br><br>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 2. The manager chooses the order he wants and it will load a seperate page (calls the confirmOrder_addTicket.html) that has all of the details
 #

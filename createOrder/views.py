@@ -44,4 +44,5 @@ def storeOrderPageView(request):
 
 ############## this is a display of the FINAL orders created by customers ##############
 def OrdersSummaryView(request):
+    
     return render(request, "trackOrders/displayOrders.html")
