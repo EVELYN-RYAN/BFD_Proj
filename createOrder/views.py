@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import render
-from django.shortcuts import render
 from django.http import HttpResponse
 # HERE, I need to import the HTML page that I want and then i can return it LATER
 from createOrder.models import Employee, job_order, ticket
@@ -44,5 +42,5 @@ def storeOrderPageView(request):
 
 ############## this is a display of the FINAL orders created by customers ##############
 def OrdersSummaryView(request):
-    
+
     return render(request, "trackOrders/displayOrders.html")

@@ -24,7 +24,8 @@ additional notes
                 Let's fill out this form real quick
             </h>
         </div>
-    <form>
+    <form action="{% url 'storeorder' %}" method="POST">
+        {% csrf_token %}
         <div id="contact">
             <label for="fname">First Name:&nbsp;&nbsp;</label>
 			<label for="lname">Last Name:</label>
@@ -60,4 +61,5 @@ additional notes
         </form>
         
     </div>
+    <br>
 {% endblock body %}

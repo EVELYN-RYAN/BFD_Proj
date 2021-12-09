@@ -39,7 +39,7 @@ class Customer(models.Model):
 
     #
     #
-    #first_name = models.CharField(max_length=30)
+    customer_id = models.IntegerField(unique=True)
     business_name = models.CharField(max_length=30)
     # user_name = models.CharField(max_length=20)
     # password = models.CharField(max_length=20)
@@ -126,7 +126,7 @@ class Employee(models.Model):
         return self.first_name + " " + self.last_name
 
 
-####################################### TABLE 5 ################################################### product_category
+# TABLE 5 ################################################### product_category
 
 class product_category(models.Model):
     # don't need to make id, becuase python will do it= autogenerates!
@@ -145,7 +145,8 @@ class product_category(models.Model):
     def __str__(self):
         return self.product_category_description
 
-####################################### TABLE 6 ################################################### product
+# TABLE 6 ################################################### product
+
 
 class product(models.Model):
     # don't need to make id, becuase python will do it= autogenerates!
@@ -171,7 +172,7 @@ class product(models.Model):
         return self.product_name
 
 
-####################################### TABLE 7 ################################################### order_detail
+# TABLE 7 ################################################### order_detail
 
 class order_detail(models.Model):
     # don't need to make id, becuase python will do it= autogenerates!
@@ -183,8 +184,8 @@ class order_detail(models.Model):
         to_field="id",
     )
     quantity = models.IntegerField(null=True)
-    quoted_price = models.DecimalField( max_digits=6, decimal_places=2)
-    order_notes = models.CharField(max_length = 500)
+    quoted_price = models.DecimalField(max_digits=6, decimal_places=2)
+    order_notes = models.CharField(max_length=500)
 
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
@@ -199,11 +200,11 @@ class order_detail(models.Model):
         return self.product_id + " " + self.order_notes
 
 
-####################################### TABLE 8 ################################################### job order
+# TABLE 8 ################################################### job order
 
 class job_order(models.Model):
     # don't need to make id, becuase python will do it= autogenerates!
-    order_date = models.DateTimeField(default=datetime.today, blank = True)
+    order_date = models.DateTimeField(default=datetime.today, blank=True)
     customer_id = models.ForeignKey(
         Customer,
         default="",
@@ -219,7 +220,6 @@ class job_order(models.Model):
         to_field="id",
     )
 
-
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
@@ -233,7 +233,7 @@ class job_order(models.Model):
         return self.order_date + " " + self.employee_id
 
 
-####################################### TABLE 9 ################################################### ticket
+# TABLE 9 ################################################### ticket
 
 
 class ticket(models.Model):
@@ -259,13 +259,13 @@ class ticket(models.Model):
         on_delete=models.DO_NOTHING,
         to_field="id",
     )
-    confirmed_date = models.DateTimeField(default=datetime.today, blank = True)
-    status = models.CharField( max_length=15)
-    status_change_date = models.DateTimeField(default=datetime.today, blank = True)
-    filing_cabinet = models.CharField( max_length=10)
-    file_name = models.CharField( max_length=25)
-    notes = models.CharField( max_length=500)
-
+    confirmed_date = models.DateTimeField(default=datetime.today, blank=True)
+    status = models.CharField(max_length=15)
+    status_change_date = models.DateTimeField(
+        default=datetime.today, blank=True)
+    filing_cabinet = models.CharField(max_length=10)
+    file_name = models.CharField(max_length=25)
+    notes = models.CharField(max_length=500)
 
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
