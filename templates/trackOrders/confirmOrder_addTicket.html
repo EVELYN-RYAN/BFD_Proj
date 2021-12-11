@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+
 <!-- FORMS NEEDED ON THIS PAGE
 ########## DETAILS of this FORM ##############
 #this is connected to the displayOrders.html, b/c it is rendering 
@@ -15,6 +17,76 @@
 # this calls the storeTicketPageView (like 22.9), which will add a new record to the ticketsSummary.html
 
 ########## Once submitted, a page is loaded that has multiple buttons ###########
-#1. orders (to the ones that need to be confirmed) --> displayOrders.html
-# 2. ticket view --> ticketsSummary.html
+#1. orders (to the ones that need to be confirmed) ------- displayOrders.html
+# 2. ticket view ----- ticketsSummary.html
 -->
+
+{%block content%}
+{%load static %}
+<body>
+    <div class="page">
+        <div>
+            <h class="title">BIG FAT DESIGN</h>
+        </div>
+        <div id="catch">
+            <h>
+                Let's fill out this form real quick
+            </h>
+        </div>
+    <form action="{% url 'createTicket' %}" method="POST">
+        {% csrf_token %}
+        <div id="contact">
+            
+                <!-- custID --> 
+                <input type="hidden" name='custID' id='id' value="{{order.id}}">
+            
+            <label for="fname">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>      
+			<label for="lname">Last Name:</label>
+			<br>
+            <input type="text" name='fname' id='cust_first_name' value="{{order.cust_first_name}}">
+            <input type="text" name='lname' id='cust_last_name' value="{{order.cust_last_name}}">
+            <br> <br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="text" name='email' id='cust_email' maxlength="50" value="{{order.cust_email}}">
+            <br><br>
+            <label for="phone">Phone Number:</label>
+            <br>
+            <input type="text" placeholder="(         )       -   " name='phone' id='cust_phone' value="{{order.cust_phone}}">
+            <br><br>    
+		</div>	
+            <div class="details">
+                
+                <label for="pName">Product Name:</label>
+                <br>
+                <input type="text" maxlength="50" size="30" name='pName' id='product_name' value="{{order.product_name}}">
+                <br><br>
+
+                <label for="pCategory">Category:</label>
+                <select name="pCategory" id="product_type" value="{{order.product_type}}">
+                    <option value="card">Business Cards</option>
+                    <option value="banner">Banner</option>
+                    <option value="brochure">Brochures</option>
+                    <option value="other">Other</option>
+                  </select>
+                <label for="amount">Quantity:</label>
+                <input type="number" class="q" min='1' value='1' name='amount' id='quantity' value="{{order.quantity}}">
+                <br><br>
+                <label for="description">Order Description:</label>
+                <input type="text" maxlength="50" size="30" name='description' id='order_description' value="{{order.order_description}}">
+
+				<br><br><br>
+                <p>STILL NEED TO ADD TO THIS (:
+                    <br>
+                <button onClick="addFiles">+Add Files</button>
+				<br><br><br>
+                    
+            </div>
+            <button type="submit" size="30">Create Ticket</button>
+
+        </form>
+        
+    </div>
+    <br>
+
+{%endblock%}

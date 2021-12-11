@@ -78,6 +78,50 @@ def editOrderPageView(request, custID):
     return render(request, 'trackOrders/editOrder.html', context)
 
 
+def confirmOrderPageView(request, custId):
+    # order = Create_Order.objects.get(id=custId)
+    confirm_order = Create_Order.objects.filter(id=custId)
+    context = {
+        'confirm_order': confirm_order,
+    }
+    return render(request, "trackOrders/confirmOrder.html", context)
+
+
+#### THIS IS redirecting to the create ticket page #####
+## still needs works###
+def confirmOrder_CreateTicket(request, custID):
+    confirm_order = Create_Order.objects.filter(id=custID)
+    context = {
+        'confirm_order': confirm_order,
+    }
+    return render(request, "trackOrders/createTicket.html", context)
+
+
+#### THIS IS CREATING THE TICKET #####
+def storeTicketPageView(request, orderID):
+    if request.method == 'POST':
+        icustID = request.POST['custID']
+
+        # Create a new ticket
+        new_ticket = ticket()
+
+        # Modify the employee last name with a new value from the form
+        ticket.order_id = icustID
+        ticket.cust_first_name = request.POST['']
+        order.cust_last_name = request.POST['lname']
+        order.cust_email = request.POST['email']
+        order.cust_phone = request.POST['phone']
+        order.product_name = request.POST['pName']
+        order.product_type = request.POST['pCategory']
+        order.quantity = request.POST['amount']
+        order.order_description = request.POST['description']
+
+        # Save the changes
+        order.save()
+
+    return OrdersSummaryView(request)
+
+
 def updateOrder(request):
     if request.method == 'POST':
         icustID = request.POST['custID']
