@@ -30,25 +30,29 @@ def storeOrderPageView(request):
     new_order.cust_last_name = request.POST.get('lname')
     new_order.cust_email = request.POST.get('email')
     new_order.cust_phone = request.POST.get('phone')
-    new_order.product_name = request.POST.get('product_name')
-    new_order.product_type = request.POST.get('product_type')
-    new_order.quantity = request.POST.get('quantity')
-    new_order.order_notes = request.POST.get('order_description')
+    new_order.product_name = request.POST.get('pName')
+    new_order.product_type = request.POST.get('pCategory')
+    new_order.quantity = request.POST.get('amount')
+    new_order.order_description = request.POST.get('description')
 
     # Save the ticket information record which will generate the autoincremented id
     new_order.save()
 
     # Make a list of all of the employee records and store it to the variable
-    data = job_order.objects.all()
+    new_orders = Create_Order.objects.all()
 
     # Assign the list of employee records to the dictionary key "our_emps"
     context = {
-        "our_ticket": data
+        "new_orders": new_orders
     }
     return render(request, 'trackOrders/displayOrders.html', context)
 
 
 ############## this is a display of the FINAL orders created by customers ##############
 def OrdersSummaryView(request):
+    new_orders = Create_Order.objects.all()
 
-    return render(request, "trackOrders/displayOrders.html")
+    context = {
+        "new_orders": new_orders
+    }
+    return render(request, "trackOrders/displayOrders.html", context)

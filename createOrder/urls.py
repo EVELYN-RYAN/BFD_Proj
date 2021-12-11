@@ -9,6 +9,7 @@ from .views import orderPageView, storeOrderPageView, OrdersSummaryView
 urlpatterns = [
     path("createorder/", orderPageView, name="orders"),
     path("storeorder/", storeOrderPageView, name='storeorder'),
+    path('currentOrders/', OrdersSummaryView, name='currentOrders')
     # path("order/", OrdersSummaryView, name="orders"),
     # path("orders/", OrdersSummaryView, name="orders"),
 

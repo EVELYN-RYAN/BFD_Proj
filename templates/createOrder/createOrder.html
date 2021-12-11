@@ -13,6 +13,7 @@ Business name
 additional notes
 -->
 {% extends 'base.html' %}
+{% load static %}
 {% block body %}
 <body>
     <div class="page">
@@ -46,7 +47,7 @@ additional notes
                 
                 <label for="pName">Product Name:</label>
                 <br>
-                <input type="text" maxlength="50" size="30" name='pName' id='product_name'>
+                <input type="text" maxlength="50" size="30" name='pName' id='product_name' value='hot dog'>
                 <br><br>
 
                 <label for="pCategory">Category:</label>
@@ -60,17 +61,17 @@ additional notes
                 <input type="number" class="q" min='1' value='1' name='amount' id='quantity'>
                 <br><br>
                 <label for="description">Order Description:</label>
-                <input type="text" maxlength="50" size="30" name='description' id='order_description' >
+                <input type="text" maxlength="50" size="30" name='description' id='order_description' value='so so good' >
 
 				<br><br><br>
                 <p>STILL NEED TO ADD TO THIS (:
                     <br>
                 <button onClick="addFiles">+Add Files</button>
 				<br><br><br>
-			<button type="submit" size="30">Submit Order</button>
                     
             </div>
-            
+            <button type="submit" size="30">Submit Order</button>
+
         </form>
         
     </div>
