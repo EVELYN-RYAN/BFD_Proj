@@ -10,10 +10,6 @@
 # 1. Shows a list of all the orders still unconfirmed
 #
 
-product_id/productname
-quantity
-quoted_price
-order_notes
 
 
 
@@ -56,51 +52,34 @@ order_notes
                         {% comment %} <th></th>
                         <th>NPI</th> {% endcomment %}
                         <th style="text-align: center;">Confirm</th>
+                        <th style="text-align: center;">Deny</th>
                         <th style="text-align: center;">Product Name</th>
                         <th style="text-align: center;">Quantity Ordered</th>
-                        <th style="text-align: center;">Quoted Price</th>
-                        <th style="text-align: center;">Notes</th> 
-                        <th style="text-align: center;">Deny</th>
+                        <th style="text-align: center;">Quoted Price</th> 
+                        <th style="text-align: center;">Notes</th>
                         
                     </tr>
 
         {% for order in our_orders %}           
                     <tr>
                         <td>
-                            <a class="mybutton2" href="{% url 'confirmOrder' %}">Edit</a>
+                            <a class="mybutton2" href="{% url 'confirmOrder' id=order.product_id %}">Confirm</a>
                         </td>
                         <td style="text-align: center;">
-                            <form name='form' method="get" action = {% url 'show_prescribed_drugs' %}>
-                                <label for='NPI' ></label>
-                                <input type="text"  name='NPI' id='NPI' hidden value={{prescriber.npi}}> 
-                                    <button type = "submit">Click Me!</button>
-                            </form>        
+                            <a class="mybutton2" href="{% url 'denyorder' id=order.product_id %}">Deny</a>
                         </td>
                         <td style="text-align: center;">
-                                {{prescriber.fname}}
+                                {{order.productname}}
                         </td>
                         <td style="text-align: center;">
-                                {{prescriber.lname}}
+                                {{order.quantity}}
                         </td>
                         <td style="text-align: center;">
-                                {{prescriber.gender}}
+                                {{order.quoted_price}}
                         </td>
                         <td style="text-align: center;">
-                                {{prescriber.state}}
+                                {{order.ordernotes}}
                         </td>
-                        <td style="text-align: center;">
-                                {{prescriber.credentials}}
-                        </td>
-                        <td style="text-align: center;">
-                                {{prescriber.specialty}}
-                        </td>
-                        <td style="text-align: center;">
-                            {{prescriber.isopioidprescriber}}
-                        </td>
-                        <td style="text-align: center;">
-                            {{prescriber.totalprescriptions}}
-                        </td>
-                        <td>
                             <a class="mybutton2"href="{% url 'deletePrescriber' NPI=prescriber.npi %}">Delete</a>
                         </td>
                     </tr>
