@@ -1,0 +1,86 @@
+<!-- form we need
+create order
+Customer firstname
+customer lastname
+product type
+date submitted
+city, state, zip
+email,
+ phone
+quantity
+quoted price
+Business name
+additional notes
+-->
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<body>
+    <div class="page">
+        <div>
+            <h class="title">BIG FAT DESIGN</h>
+        </div>
+        <div id="catch">
+            <h>
+                Let's fill out this form real quick
+            </h>
+        </div>
+    <!--
+        VERY IMPORTANT
+        THIS NEEDS TO GET THE ORDER ID PASSED TO IT, and then we need to change the form to be EVERYTHING
+        that will be stored with a ticket (:
+        MAKE SURE TO ALSO CHANGE IT ON THE VIEW WHERE THERE ARE ERRORS, I've kind of already started it
+
+        -->
+        <form action="{% url 'storeorder' %}" method="POST">
+        {% csrf_token %}
+        <div id="contact">
+            <label for="fname">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>      
+			<label for="lname">Last Name:</label>
+			<br>
+            <input type="text" name='fname' id='cust_first_name'>
+            <input type="text" name='lname' id='cust_last_name' >
+            <br> <br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="text" name='email' id='cust_email' maxlength="50" >
+            <br><br>
+            <label for="phone">Phone Number:</label>
+            <br>
+            <input type="text" placeholder="(         )       -   " name='phone' id='cust_phone'>
+            <br><br>    
+		</div>	
+            <div class="details">
+                
+                <label for="pName">Product Name:</label>
+                <br>
+                <input type="text" maxlength="50" size="30" name='pName' id='product_name' value='hot dog'>
+                <br><br>
+
+                <label for="pCategory">Category:</label>
+                <select name="pCategory" id="product_type">
+                    <option value="card">Business Cards</option>
+                    <option value="banner">Banner</option>
+                    <option value="brochure">Brochures</option>
+                    <option value="other">Other</option>
+                  </select>
+                <label for="amount">Quantity:</label>
+                <input type="number" class="q" min='1' value='1' name='amount' id='quantity'>
+                <br><br>
+                <label for="description">Order Description:</label>
+                <input type="text" maxlength="50" size="30" name='description' id='order_description' value='so so good' >
+
+				<br><br><br>
+                <p>STILL NEED TO ADD TO THIS (:
+                    <br>
+                <button onClick="addFiles">+Add Files</button>
+				<br><br><br>
+                    
+            </div>
+            <button type="submit" size="30">Submit Order</button>
+
+        </form>
+        
+    </div>
+    <br>
+{% endblock body %}
