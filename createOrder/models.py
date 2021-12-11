@@ -39,7 +39,7 @@ class Customer(models.Model):
 
     #
     #
-    customer_id = models.IntegerField(unique=True)
+    # id = models.IntegerField(unique=True, primary_key=True)
     business_name = models.CharField(max_length=30)
     # user_name = models.CharField(max_length=20)
     # password = models.CharField(max_length=20)
@@ -183,9 +183,25 @@ class order_detail(models.Model):
         on_delete=models.DO_NOTHING,
         to_field="id",
     )
+    ######### DON'T NEED (customer already has it) x#############
+    # person_id = models.ForeignKey(
+    #     Person,
+    #     default="",
+    #     verbose_name="Person ID",
+    #     on_delete=models.DO_NOTHING,
+    #     to_field="id",
+    # )
+    customer_id = models.ForeignKey(
+        Customer,
+        default="",
+        verbose_name="Customer ID",
+        on_delete=models.DO_NOTHING,
+        to_field="id",
+    )
     quantity = models.IntegerField(null=True)
     quoted_price = models.DecimalField(max_digits=6, decimal_places=2)
     order_notes = models.CharField(max_length=500)
+    order_date = models.DateTimeField
 
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
