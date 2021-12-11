@@ -27,31 +27,44 @@ additional notes
     <form action="{% url 'storeorder' %}" method="POST">
         {% csrf_token %}
         <div id="contact">
-            <label for="fname">First Name:&nbsp;&nbsp;</label>
+            <label for="fname">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>      
 			<label for="lname">Last Name:</label>
 			<br>
-            <input type="text" >
-            <input type="text" >
+            <input type="text" name='fname' id='cust_first_name'>
+            <input type="text" name='lname' id='cust_last_name' >
             <br> <br>
             <label for="email">Email:</label>
             <br>
-            <input type="text" name='email' size="25" >
+            <input type="text" name='email' id='cust_email' maxlength="50" >
             <br><br>
             <label for="phone">Phone Number:</label>
             <br>
-            <input type="text" placeholder="(         )       -   " >
+            <input type="text" placeholder="(         )       -   " name='phone' id='cust_phone'>
             <br><br>    
 		</div>	
             <div class="details">
                 
-                <label for="orderDescription">Order Description:</label>
-                
-                <input type="text" maxlength="50" size="30" >
+                <label for="pName">Product Name:</label>
+                <br>
+                <input type="text" maxlength="50" size="30" name='pName' id='product_name'>
+                <br><br>
 
-                <label for="quantity">Quantity:</label>
+                <label for="pCategory">Category:</label>
+                <select name="pCategory" id="product_type">
+                    <option value="card">Business Cards</option>
+                    <option value="banner">Banner</option>
+                    <option value="brochure">Brochures</option>
+                    <option value="other">Other</option>
+                  </select>
+                <label for="amount">Quantity:</label>
+                <input type="number" class="q" min='1' value='1' name='amount' id='quantity'>
+                <br><br>
+                <label for="description">Order Description:</label>
+                <input type="text" maxlength="50" size="30" name='description' id='order_description' >
 
-                <input type="text" class="q" maxlength="4" size="4" >
 				<br><br><br>
+                <p>STILL NEED TO ADD TO THIS (:
+                    <br>
                 <button onClick="addFiles">+Add Files</button>
 				<br><br><br>
 			<button type="submit" size="30">Submit Order</button>

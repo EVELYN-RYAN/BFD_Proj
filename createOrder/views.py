@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 # HERE, I need to import the HTML page that I want and then i can return it LATER
-from createOrder.models import Employee, job_order, ticket
+from createOrder.models import Create_Order, Employee, job_order, ticket
 
 
 ################# Create your views here. ################
@@ -14,18 +14,26 @@ def orderPageView(request):
 ################### THIS is not displayed to the customer, it will MAKE an order ################
 def storeOrderPageView(request):
     # Create a new ticket object from the model (like a new record)
-    new_order = job_order()
+    new_order = Create_Order()
 
     # Store the data from the form to the new object's attributes (like columns)
-    new_order.order_id = request.POST.get('order_id')
-    new_order.product_id = request.POST.get('product_id')
-    new_order.employee_id = request.POST.get('employee_id')
-    new_order.confirmed_date = request.POST.get('confirmed_date')
-    new_order.status = request.POST.get('status')
-    new_order.status_change_date = request.POST.get('status_change_date')
-    new_order.filing_cabinet = request.POST.get('filing_cabinet')
-    new_order.file_name = request.POST.get('file_name')
-    new_order.notes = request.POST.get('notes')
+    # new_order.order_id = request.POST.get('order_id')
+    # new_order.product_id = request.POST.get('product_id')
+    # new_order.employee_id = request.POST.get('employee_id')
+    # new_order.confirmed_date = request.POST.get('confirmed_date')
+    # new_order.status = request.POST.get('status')
+    # new_order.status_change_date = request.POST.get('status_change_date')
+    # new_order.filing_cabinet = request.POST.get('filing_cabinet')
+    # new_order.file_name = request.POST.get('file_name')
+    # new_order.notes = request.POST.get('notes')
+    new_order.cust_first_name = request.POST.get('fname')
+    new_order.cust_last_name = request.POST.get('lname')
+    new_order.cust_email = request.POST.get('email')
+    new_order.cust_phone = request.POST.get('phone')
+    new_order.product_name = request.POST.get('product_name')
+    new_order.product_type = request.POST.get('product_type')
+    new_order.quantity = request.POST.get('quantity')
+    new_order.order_notes = request.POST.get('order_description')
 
     # Save the ticket information record which will generate the autoincremented id
     new_order.save()
