@@ -19,15 +19,23 @@
   
   <div class="collapse navbar-collapse" id="navbarSupportedContent1">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"> <a class="nav-link" href="{% url 'currentOrders'%}">Current Orders &nbsp;</a> </li>
+      {% comment %} <li class="nav-item"> <a class="nav-link" href="{% url 'currentOrders'%}">Current Orders &nbsp;</a> </li> {% endcomment %}
       <li class="nav-item"> <a class="nav-link" href="{% url 'orders'%}">Order Now &nbsp;</a> </li>
+      <!--THIS IS FOR THE ORDERS-->
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Tracking &nbsp;</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="{% url 'currentOrders' %}">Current Orders</a> <a class="dropdown-item" href="{% url 'currentTickets'%}">Current Tickets</a>
+          {% comment %} <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'About' %}">About Us</a> 
+          <a class="dropdown-item" href="">Contact</a>
+        </div> {% endcomment %}
+      </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> More &nbsp;</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="{% url 'Products' %}">Our Products</a> <a class="dropdown-item" href="#">Past Jobs</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{% url 'About' %}">About Us</a> 
           <a class="dropdown-item" href="">Contact</a>
         </div>
-      </li>
+      </li>&nbsp;&nbsp;
       <li class="nav-item"> <a class="nav-link" href="admin/">Admin&nbsp;</a> </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

@@ -58,6 +58,16 @@ def OrdersSummaryView(request):
     return render(request, "trackOrders/displayOrders.html", context)
 
 
+############## this is a display of the FINAL tickets created by manager ##############
+def TicketsSummaryView(request):
+    all_tickets = ticket.objects.all()
+
+    context = {
+        "all_tickets": all_tickets
+    }
+    return render(request, "trackOrders/ticketsSummary.html", context)
+
+
 ###### trying to edit and delete a single order ########
 def editOrderPageView(request, custID):
     order = Create_Order.objects.get(id=custID)
