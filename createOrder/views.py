@@ -56,3 +56,37 @@ def OrdersSummaryView(request):
         "new_orders": new_orders
     }
     return render(request, "trackOrders/displayOrders.html", context)
+
+
+###### trying to edit and delete a single order ########
+def editOrderPageView(request, custID):
+    order = Create_Order.objects.get(id=custID)
+
+    context = {
+        "order": order
+    }
+    return render(request, 'trackOrders/editOrder.html', context)
+
+
+def updateOrder(request):
+    if request.method == 'POST':
+        icustID = request.POST['custID']
+
+        # Find the employee record
+        order = Create_Order.objects.get(id=icustID)
+
+        # Modify the employee last name with a new value from the form
+        order.id = icustID
+        order.cust_first_name = request.POST['fname']
+        order.cust_last_name = request.POST['lname']
+        order.cust_email = request.POST['email']
+        order.cust_phone = request.POST['phone']
+        order.product_name = request.POST['pName']
+        order.product_type = request.POST['pCategory']
+        order.quantity = request.POST['amount']
+        order.order_description = request.POST['description']
+
+        # Save the changes
+        order.save()
+
+    return OrdersSummaryView(request)

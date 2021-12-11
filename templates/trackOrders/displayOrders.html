@@ -28,12 +28,8 @@
 {% for order in new_orders %}           
     <tr>
         <td style="text-align: center;">
-            {% comment %} <form name='form' method="get" action = {% url 'topTenDrugsPageView' %}>
-                <label for='drug_name' ></label>
-                <input type="text"  name='drug_name' id='drug_name' hidden value={{drug.drugname}}> 
-                    <button type = "submit">Click Me!</button>
-            </form>  {% endcomment %}
-            EDIT
+            <a  href="{% url 'editOrder' custID=order.id %}">Edit</a>
+
         </td>
         <td style="text-align: center;">
             {{order.cust_first_name}}
