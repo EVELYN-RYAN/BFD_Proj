@@ -15,16 +15,40 @@
 
 -->
 
+
 {% block body %}
+<table>
+    <tr>
+        <th style="text-align: center;" >Edit</th>
+        <th style="text-align: center;">Customer First Name</th>
+        <th style="text-align: center;">Product Name</th>
+        <th style="text-align: center;">Quanity</th>
+    </tr>
 
-{% for order in new_orders %}
+{% for order in new_orders %}           
+    <tr>
+        <td style="text-align: center;">
+            {% comment %} <form name='form' method="get" action = {% url 'topTenDrugsPageView' %}>
+                <label for='drug_name' ></label>
+                <input type="text"  name='drug_name' id='drug_name' hidden value={{drug.drugname}}> 
+                    <button type = "submit">Click Me!</button>
+            </form>  {% endcomment %}
+            EDIT
+        </td>
+        <td style="text-align: center;">
+            {{order.cust_first_name}}
+          
+        </td>
+        <td style="text-align: center;">
+            {{order.product_name}}
+        </td>
+        <td style="text-align: center;">
+            {{order.quantity}}
+        </td>
+    </tr>
+{% endfor %} 
+</table>
 
-    {{order.cust_first_name}}
-    {{order.quantity}}
-    <br>
-
-
-{%endfor%}
 
 {% endblock%}
 
