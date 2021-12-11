@@ -238,50 +238,6 @@ class order_detail(models.Model):
 # TABLE 9 ################################################### ticket
 
 
-class ticket(models.Model):
-    # don't need to make id, becuase python will do it= autogenerates!
-    order_id = models.ForeignKey(
-        job_order,
-        default="",
-        verbose_name="Order ID",
-        on_delete=models.DO_NOTHING,
-        to_field="id",
-    )
-    product_id = models.ForeignKey(
-        product,
-        default="",
-        verbose_name="Product ID",
-        on_delete=models.DO_NOTHING,
-        to_field="id",
-    )
-    employee_id = models.ForeignKey(
-        Employee,
-        default="",
-        verbose_name="Employee ID",
-        on_delete=models.DO_NOTHING,
-        to_field="id",
-    )
-    confirmed_date = models.DateTimeField(default=datetime.today, blank=True)
-    status = models.CharField(max_length=15)
-    status_change_date = models.DateTimeField(
-        default=datetime.today, blank=True)
-    filing_cabinet = models.CharField(max_length=10)
-    file_name = models.CharField(max_length=25)
-    notes = models.CharField(max_length=500)
-
-    # This links THIS model to the database table (:
-    # python will automatically do this, but this just makes SURE and will override what python automatically does
-
-    class Meta:
-        db_table = "ticket"
-
-    # ACCESS DATA--> if try to look at a single record, we are going to return the description
-    # the description= the description field from the table
-    # This is what is going to be displayed to the ADMIN!!
-    def __str__(self):
-        return self.order_id + " " + self.status + " " + self.notes
-
-
 # TABLE 10...practice ################################################### CREATE_ORDER
 
 
@@ -308,3 +264,47 @@ class Create_Order(models.Model):
     # This is what is going to be displayed to the ADMIN!!
     def __str__(self):
         return self.product_id + " " + self.order_notes
+
+
+class ticket(models.Model):
+    # don't need to make id, becuase python will do it= autogenerates!
+    order_id = models.ForeignKey(
+        Create_Order,
+        default="",
+        verbose_name="Order ID",
+        on_delete=models.DO_NOTHING,
+        to_field="id",
+    )
+    # product_id = models.ForeignKey(
+    #     product,
+    #     default="",
+    #     verbose_name="Product ID",
+    #     on_delete=models.DO_NOTHING,
+    #     to_field="id",
+    # )
+    # employee_id = models.ForeignKey(
+    #     Employee,
+    #     default="",
+    #     verbose_name="Employee ID",
+    #     on_delete=models.DO_NOTHING,
+    #     to_field="id",
+    # )
+    confirmed_date = models.DateTimeField(default=datetime.today, blank=True)
+    status = models.CharField(max_length=25)
+    status_change_date = models.DateTimeField(
+        default=datetime.today, blank=True)
+    filing_cabinet = models.CharField(max_length=10)
+    file_name = models.CharField(max_length=25)
+    notes = models.CharField(max_length=500)
+
+    # This links THIS model to the database table (:
+    # python will automatically do this, but this just makes SURE and will override what python automatically does
+
+    class Meta:
+        db_table = "ticket"
+
+    # ACCESS DATA--> if try to look at a single record, we are going to return the description
+    # the description= the description field from the table
+    # This is what is going to be displayed to the ADMIN!!
+    def __str__(self):
+        return self.order_id + " " + self.status + " " + self.notes
