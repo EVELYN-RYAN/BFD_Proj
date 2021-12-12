@@ -308,3 +308,4 @@ class ticket(models.Model):
     # This is what is going to be displayed to the ADMIN!!
     def __str__(self):
         return self.order_id + " " + self.status + " " + self.notes
+        
