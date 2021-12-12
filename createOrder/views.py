@@ -38,12 +38,9 @@ def storeOrderPageView(request):
     # Save the ticket information record which will generate the autoincremented id
     new_order.save()
 
-    # Make a list of all of the employee records and store it to the variable
-    new_orders = Create_Order.objects.all()
-
     # Assign the list of employee records to the dictionary key "our_emps"
     context = {
-        "new_orders": new_orders
+        "new_orders": new_order
     }
     return render(request, 'trackOrders/displayOrders.html', context)
 
