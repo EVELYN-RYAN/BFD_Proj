@@ -256,8 +256,8 @@ class Create_Order(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-#    class Meta:
-#        db_table = "create_order"
+    class Meta:
+        db_table = "create_order"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -300,8 +300,8 @@ class ticket(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-#    class Meta:
-#        db_table = "ticket"
+    class Meta:
+        db_table = "ticket"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table

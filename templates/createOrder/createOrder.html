@@ -31,8 +31,8 @@ additional notes
             <label for="fname">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>      
 			<label for="lname">Last Name:</label>
 			<br>
-            <input type="text" name='fname' id='cust_first_name'>
-            <input type="text" name='lname' id='cust_last_name' >
+            <input type="text" name='fname' id='cust_first_name' required>
+            <input type="text" name='lname' id='cust_last_name' required>
             <br> <br>
             <label for="email">Email:</label>
             <br>
@@ -47,11 +47,11 @@ additional notes
             
             <label for="pName">Product Name:</label>
             <br>
-            <input type="text" maxlength="50" size="30" name='pName' id='product_name' value='hot dog'>
+            <input type="text" maxlength="50" size="30" name='pName' id='product_name' required>
             <br><br>
 
             <label for="pCategory">Category:</label>
-            <select name="pCategory" id="product_type">
+            <select name="pCategory" id="product_type" required>
                 <option value="card">Business Cards</option>
                 <option value="banner">Banner</option>
                 <option value="brochure">Brochures</option>
@@ -61,7 +61,7 @@ additional notes
             <input type="number" class="q" min='1' value='1' name='amount' id='quantity'>
             <br><br>
             <label for="description">Order Description:</label>
-            <input type="text" maxlength="50" size="30" name='description' id='order_description' value='so so good' >
+            <input type="text" maxlength="50" size="30" name='description' id='order_description' required>
 
             <br><br><br>
             <p>STILL NEED TO ADD TO THIS (:

@@ -20,7 +20,8 @@
 <table>
     <tr>
         <th style="text-align: center;" >Edit</th>
-        <th style="text-align: center;">Customer First Name</th>
+        <th style="text-align: center;"> First Name</th>
+        <th style="text-align: center;"> Last Name</th>
         <th style="text-align: center;">Product Name</th>
         <th style="text-align: center;">Quanity</th>
         <th style="text-align: center;">Order Description</th>
@@ -34,13 +35,18 @@
         </td>
         <td style="text-align: center;">
             {{order.cust_first_name}}
-          
+        </td>
+        <td style="text-align: center;">
+            {{order.cust_last_name}}
         </td>
         <td style="text-align: center;">
             {{order.product_name}}
         </td>
         <td style="text-align: center;">
             {{order.quantity}}
+        </td>
+        <td style="text-align: center;">
+            {{order.order_description}}
         </td>
         <td style="text-align: center;">
             <a  href="{% url 'deleteOrder' custID=order.id %}">Delete</a>
