@@ -2,7 +2,7 @@
 from django.urls import path
 
 # This is accessing the views/funcitons that we wrote on views.py!!
-from .views import editOrderPageView, orderPageView, storeOrderPageView, OrdersSummaryView, updateOrder, TicketsSummaryView, confirmOrder_CreateTicket
+from .views import editOrderPageView, orderPageView, storeOrderPageView, OrdersSummaryView, updateOrder, TicketsSummaryView, confirmOrder_CreateTicket, deleteOrder
 
 
 # we create the path with this syntax
@@ -16,6 +16,8 @@ urlpatterns = [
     path('createTicket/<int:custID>/',
          confirmOrder_CreateTicket, name='createTicket'),
     path("updateOrder/", updateOrder, name="updateOrder"),
+    path("confirmOrder/<int:custID>/", confirmOrder_CreateTicket, name="confirmOrder"),
+    path("deleteOrder/<int:custID>/", deleteOrder, name="deleteOrder"),
 
     # path("order/", OrdersSummaryView, name="orders"),
     # path("orders/", OrdersSummaryView, name="orders"),

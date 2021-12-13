@@ -43,7 +43,7 @@
             {{order.quantity}}
         </td>
         <td style="text-align: center;">
-            {% comment %} <a  href="{% url 'confirmOrder' custID=order.id %}">Confirm</a> {% endcomment %}
+            <a  href="{% url 'deleteOrder' custID=order.id %}">Delete</a>
         </td>
     </tr>
 {% endfor %} 

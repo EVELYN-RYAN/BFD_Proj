@@ -36,6 +36,16 @@ def storeOrderPageView(request):
     }
     return render(request, 'trackOrders/displayOrders.html', context)
 
+def deleteOrder(request, custID):
+    delete_order = Create_Order.objects.filter(id=custID)
+
+    delete_order.delete()
+    data = Create_Order.objects.all()
+    context = {
+        'new_orders': data,
+    }
+    return render(request, "trackOrders/displayOrders.html", context)
+
 
 ############## this is a display of the FINAL orders created by customers ##############
 def OrdersSummaryView(request):
