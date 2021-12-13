@@ -43,36 +43,36 @@ additional notes
             <input type="text" placeholder="(         )       -   " name='phone' id='cust_phone'>
             <br><br>    
 		</div>	
-            <div class="details">
-                
-                <label for="pName">Product Name:</label>
+        <div class="details">
+            
+            <label for="pName">Product Name:</label>
+            <br>
+            <input type="text" maxlength="50" size="30" name='pName' id='product_name' value='hot dog'>
+            <br><br>
+
+            <label for="pCategory">Category:</label>
+            <select name="pCategory" id="product_type">
+                <option value="card">Business Cards</option>
+                <option value="banner">Banner</option>
+                <option value="brochure">Brochures</option>
+                <option value="other">Other</option>
+                </select>
+            <label for="amount">Quantity:</label>
+            <input type="number" class="q" min='1' value='1' name='amount' id='quantity'>
+            <br><br>
+            <label for="description">Order Description:</label>
+            <input type="text" maxlength="50" size="30" name='description' id='order_description' value='so so good' >
+
+            <br><br><br>
+            <p>STILL NEED TO ADD TO THIS (:
                 <br>
-                <input type="text" maxlength="50" size="30" name='pName' id='product_name' value='hot dog'>
-                <br><br>
+            <button onClick="addFiles">+Add Files</button>
+            <br><br><br>
+                
+        </div>
+        <button type="submit" size="30">Submit Order</button>
 
-                <label for="pCategory">Category:</label>
-                <select name="pCategory" id="product_type">
-                    <option value="card">Business Cards</option>
-                    <option value="banner">Banner</option>
-                    <option value="brochure">Brochures</option>
-                    <option value="other">Other</option>
-                  </select>
-                <label for="amount">Quantity:</label>
-                <input type="number" class="q" min='1' value='1' name='amount' id='quantity'>
-                <br><br>
-                <label for="description">Order Description:</label>
-                <input type="text" maxlength="50" size="30" name='description' id='order_description' value='so so good' >
-
-				<br><br><br>
-                <p>STILL NEED TO ADD TO THIS (:
-                    <br>
-                <button onClick="addFiles">+Add Files</button>
-				<br><br><br>
-                    
-            </div>
-            <button type="submit" size="30">Submit Order</button>
-
-        </form>
+    </form>
         
     </div>
     <br>

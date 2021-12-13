@@ -23,8 +23,8 @@ class Person(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "person"
+#    class Meta:
+#        db_table = "person"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -61,8 +61,8 @@ class Customer(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "customer"
+#    class Meta:
+#        db_table = "customer"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -82,8 +82,8 @@ class Employee_Position(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "emp_position"
+#    class Meta:
+#        db_table = "emp_position"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -116,8 +116,8 @@ class Employee(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "employee"
+#    class Meta:
+#        db_table = "employee"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -136,8 +136,8 @@ class product_category(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "product_cateogory"
+#    class Meta:
+#        db_table = "product_cateogory"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -163,8 +163,8 @@ class product(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "product"
+#    class Meta:
+#        db_table = "product"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -196,8 +196,8 @@ class job_order(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "job_order"
+#    class Meta:
+#        db_table = "job_order"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -225,8 +225,8 @@ class order_detail(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "order_detail"
+#    class Meta:
+#        db_table = "order_detail"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -256,8 +256,8 @@ class Create_Order(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "create_order"
+#    class Meta:
+#        db_table = "create_order"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
@@ -300,12 +300,11 @@ class ticket(models.Model):
     # This links THIS model to the database table (:
     # python will automatically do this, but this just makes SURE and will override what python automatically does
 
-    class Meta:
-        db_table = "ticket"
+#    class Meta:
+#        db_table = "ticket"
 
     # ACCESS DATA--> if try to look at a single record, we are going to return the description
     # the description= the description field from the table
     # This is what is going to be displayed to the ADMIN!!
     def __str__(self):
         return self.order_id + " " + self.status + " " + self.notes
-        

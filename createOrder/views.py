@@ -14,33 +14,25 @@ def orderPageView(request):
 ################### THIS is not displayed to the customer, it will MAKE an order ################
 def storeOrderPageView(request):
     # Create a new ticket object from the model (like a new record)
-    new_order = Create_Order()
+    if request.method == 'POST':
+        new_order = Create_Order()
 
-    # Store the data from the form to the new object's attributes (like columns)
-    # new_order.order_id = request.POST.get('order_id')
-    # new_order.product_id = request.POST.get('product_id')
-    # new_order.employee_id = request.POST.get('employee_id')
-    # new_order.confirmed_date = request.POST.get('confirmed_date')
-    # new_order.status = request.POST.get('status')
-    # new_order.status_change_date = request.POST.get('status_change_date')
-    # new_order.filing_cabinet = request.POST.get('filing_cabinet')
-    # new_order.file_name = request.POST.get('file_name')
-    # new_order.notes = request.POST.get('notes')
-    new_order.cust_first_name = request.POST.get('fname')
-    new_order.cust_last_name = request.POST.get('lname')
-    new_order.cust_email = request.POST.get('email')
-    new_order.cust_phone = request.POST.get('phone')
-    new_order.product_name = request.POST.get('pName')
-    new_order.product_type = request.POST.get('pCategory')
-    new_order.quantity = request.POST.get('amount')
-    new_order.order_description = request.POST.get('description')
+        new_order.cust_first_name = request.POST.get('fname')
+        new_order.cust_last_name = request.POST.get('lname')
+        new_order.cust_email = request.POST.get('email')
+        new_order.cust_phone = request.POST.get('phone')
+        new_order.product_name = request.POST.get('pName')
+        new_order.product_type = request.POST.get('pCategory')
+        new_order.quantity = request.POST.get('amount')
+        new_order.order_description = request.POST.get('description')
 
     # Save the ticket information record which will generate the autoincremented id
     new_order.save()
+    data = Create_Order.objects.all()
 
     # Assign the list of employee records to the dictionary key "our_emps"
     context = {
-        "new_orders": new_order
+        "new_orders": data
     }
     return render(request, 'trackOrders/displayOrders.html', context)
 
@@ -103,18 +95,18 @@ def storeTicketPageView(request, orderID):
         new_ticket = ticket()
 
         # Modify the employee last name with a new value from the form
-        ticket.order_id = icustID
-        ticket.cust_first_name = request.POST['']
-        order.cust_last_name = request.POST['lname']
-        order.cust_email = request.POST['email']
-        order.cust_phone = request.POST['phone']
-        order.product_name = request.POST['pName']
-        order.product_type = request.POST['pCategory']
-        order.quantity = request.POST['amount']
-        order.order_description = request.POST['description']
+        new_ticket.order_id = icustID
+        new_ticket.cust_first_name = request.POST['']
+        new_ticket.cust_last_name = request.POST['lname']
+        new_ticket.cust_email = request.POST['email']
+        new_ticket.cust_phone = request.POST['phone']
+        new_ticket.product_name = request.POST['pName']
+        new_ticket.product_type = request.POST['pCategory']
+        new_ticket.quantity = request.POST['amount']
+        new_ticket.order_description = request.POST['description']
 
         # Save the changes
-        order.save()
+        new_ticket.save()
 
     return OrdersSummaryView(request)
 
