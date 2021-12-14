@@ -4,7 +4,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */ :root {
-	--HATE-THIS :##F4F6FC;
+	--HATE-THIS :#F4F6FC;
 	 --Replace-with : 
   --BFD-Blue: #2f64a7;
   --BFD-Red: #d83843; 
@@ -501,7 +501,7 @@ progress {
     max-width: 1320px
   }
 }
-.row {
+.rows {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: -webkit-flex;
@@ -512,7 +512,7 @@ progress {
   margin-right: calc(var(--bs-gutter-x) * -.5);
   margin-left: calc(var(--bs-gutter-x) * -.5)
 }
-.row > * {
+.rows > * {
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
   width: 100%;
@@ -699,7 +699,7 @@ progress {
     flex: 0 0 auto;
     width: 100%
   }
-.list-inline-item .face{	
+.list-inline-item .face{
 color: #D80000;
 	}
   .row-cols-xl-2 > * {
@@ -3871,7 +3871,11 @@ textarea.form-control-lg {
 .card-text:last-child {
   margin-bottom: 0
 }
+.card-text{
+ margin-top: 3.5rem;
+}
 .card.shadow-sm .card-body .card-text {
+  min-height: 6rem;
 }
 .card-link + .card-link {
   margin-left: 1rem
@@ -9511,7 +9515,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 600
 }
 code {
-  background: ##F4F6FC;
+  background: #F4F6FC;
   color: #252930;
   padding: 0.25rem 0.375rem;
   border-radius: .25rem
@@ -9594,7 +9598,7 @@ a.text-link:hover {
   color: #fff
 }
 .btn-light {
-  background: ##F4F6FC;
+  background: #F4F6FC;
   color: #d83843
 }
 .btn-light:hover {
@@ -9613,7 +9617,6 @@ a.text-link:hover {
 }
 .theme-icon-holder {
   display: inline-block;
-  background: ##F4F6FC;
   color: #d83843;
   width: 32px;
   height: 32px;
@@ -9626,7 +9629,7 @@ a.text-link:hover {
   color: #d83843;
 }
 .theme-bg-light {
-  background: ##F4F6FC
+  background: #F4F6FC
 }
 .theme-bg-dark {
   background: #d83843
@@ -9991,7 +9994,7 @@ a.text-link:hover {
   background: #d83843
 }
 .docs-nav .nav-link:before {
-  background-color: ##F4F6FC;
+  background-color: #F4F6FC;
   content: ' ';
   display: inline-block;
   height: inherit;
