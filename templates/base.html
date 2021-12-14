@@ -1,56 +1,98 @@
+<!DOCTYPE html>
 {% load static %}
-<!doctype html>
-<html>
+<html lang="en"> 
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BFD Home</title>
-<link href="{% static 'css/bootstrap-4.4.1.css'%}" rel="stylesheet" type="text/css">
+    <title>BFD</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap Documentation Template For Software Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+	<link rel="shortcut icon" href="{% static 'img/BFD_Logo.png' %}"> 
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome JS-->
+    <script defer src="{% static 'fontawesome/js/all.min.js'%}"></script>
 
-<link href="{% static 'css/bfdmain.css'%}" rel="stylesheet" type="text/css">
-</head>
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
 
-<body class="top">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="logo" href="{% url 'Home'%}"> 
-		<img src="{% static 'img/BFD_Logo.png'%}" width="150%" href="{% url 'Home'%}" alt="BFD logo">
-	</a>
-  
-  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-    <ul class="navbar-nav mr-auto">
-      {% comment %} <li class="nav-item"> <a class="nav-link" href="{% url 'currentOrders'%}">Current Orders &nbsp;</a> </li> {% endcomment %}
-      <li class="nav-item"> <a class="nav-link" href="{% url 'orders'%}">Order Now &nbsp;</a> </li>
-      <!--THIS IS FOR THE ORDERS-->
-      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Tracking &nbsp;</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="{% url 'currentOrders' %}">Current Orders</a> <a class="dropdown-item" href="{% url 'currentTickets'%}">Current Tickets</a>
-          {% comment %} <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'About' %}">About Us</a> 
-          <a class="dropdown-item" href="">Contact</a>
-        </div> {% endcomment %}
-      </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> More &nbsp;</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="{% url 'Products' %}">Our Products</a> <a class="dropdown-item" href="#">Past Jobs</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'About' %}">About Us</a> 
-          <a class="dropdown-item" href="">Contact</a>
-        </div>
-      </li>&nbsp;&nbsp;
-      {% comment %} <li class="nav-item"> <a class="nav-link" href="#">Admin&nbsp;</a> </li> {% endcomment %}
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-    </form>
-  </div>
-</nav>
+    <!-- Theme CSS -->  
+	<link href="{% static 'css/bootstrap-4.4.1.css' %}" rel="stylesheet" type="text/css">
+    <link id="theme-style" rel="stylesheet" href="{% static 'css/theme.css' %}">
+    <link id="BFD-style" rel="stylesheet" href="{% static 'css/BFD.css' %}">
+</head> 
+
+<body style="padding-top: 70px">  
+<header class="header fixed-top">	 
+	       
+    <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+	                <div class="site-logo"><a class="navbar-brand" href="{% url 'Home' %}"><img class="logo-icon me-2" src="{% static 'img/BFD_Logo.png'%}" alt="logo"><span class="logo-text">BIG FAT DESIGN&nbsp;<span class="text-alt">.com&nbsp;</span></span></a>
+					</div> 
+                </div><!--//docs-logo-wrapper-->
+				<div>
+							      
+				</div>
+	            <div class="docs-top-utilities d-flex justify-content-end align-items-center">
+					
+				 <a class="nav-link dropdown-toggle nav-item dropdown" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Menu </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="#">Action</a> 
+						<a class="dropdown-item" href="#">Another action</a>
+	          			  <div class="dropdown-divider"></div>
+	          				<a class="dropdown-item" href="#">Something else here</a> </div>
+					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+						<li class="list-inline-item"><a class="face" href="https://www.facebook.com/BFDnSign/"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+		                <li class="list-inline-item"><a href="https://www.google.com/maps/place/Big+Fat+Design+%26+Sign/@40.2814037,-111.8257836,11.19z/data=!3m1!5s0x874d84c575720001:0x413b49a0b6410b11!4m5!3m4!1s0x874d84c57376d0a1:0x1fd58585dcbaae39!8m2!3d40.310752!4d-111.7284"><i class="fas fa-map-marked-alt"></i></a></li>
+		            </ul><!--//social-list-->
+	            </div><!--//docs-top-utilities-->
+            </div><!--//container-->
+        </div><!--//branding-->
+    </header><!--//header-->
+
+    
+
+   {% block body %}
+   {% endblock body %}
 
 
-{% block body %}
-{% endblock body %}
 
 
-<script src="{% static 'js/jquery-3.4.1.min.js'%}"  ></script>
-<script src="{% static 'js/popper.min.js'%}"        ></script>
-<script src="{% static 'js/bootstrap-4.4.1.js'%}"   ></script>
+    <footer class="footer">
 
+	    <div class="footer-bottom text-center py-5">
+		    
+		    <ul class="social-list list-unstyled pb-4 mb-0">
+	            <li class="list-inline-item"><a href="https://www.google.com/maps/place/Big+Fat+Design+%26+Sign/@40.2814037,-111.8257836,11.19z/data=!3m1!5s0x874d84c575720001:0x413b49a0b6410b11!4m5!3m4!1s0x874d84c57376d0a1:0x1fd58585dcbaae39!8m2!3d40.310752!4d-111.7284"><i class="fas fa-map-marked-alt"></i></a></li>
+	            <li class="list-inline-item"><a href="https://www.facebook.com/BFDnSign/"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+	        </ul><!--//social-list-->
+	        
+	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Copyright Big Fat Design</small>
+            
+	        
+	    </div>
+		
+	    
+    </footer>
+       
+    <!-- Javascript -->          
+    <script src="{% static 'plugins/popper.min.js'%}"></script>
+    <script src="{% static 'js/jquery-3.4.1.min.js'%}"></script>
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js'%}"></script>
+
+    <!-- Page Specific JS -->
+    <script src="{% static 'plugins/smoothscroll.min.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="{% static 'js/highlight-custom.js'%}"></script> 
+    <script src="{% static 'plugins/simplelightbox/simple-lightbox.min.js'%}"></script>      
+    <script src="{% static 'plugins/gumshoe/gumshoe.polyfills.min.js'%}"></script> 
+    <script src="{% static 'js/docs.js'%}"></script>
 </body>
-</html>
+</html> 

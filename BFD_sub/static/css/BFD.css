@@ -1,0 +1,187 @@
+@charset "UTF-8";
+:root{
+--BFD-Blue: #2f64a7;
+--BFD-Red: #d83843;
+}
+
+.page-header{
+    background-image: -webkit-linear-gradient(0deg,rgba(47,100,167,1.00) 0%,rgba(216,56,67,1.00) 100%);
+    background-image: -moz-linear-gradient(0deg,rgba(47,100,167,1.00) 0%,rgba(216,56,67,1.00) 100%);
+    background-image: -o-linear-gradient(0deg,#2F64A7 0%,rgba(216,56,67,1.00) 100%);
+    background-image: linear-gradient(90deg,rgba(47,100,167,1.00) 0%,rgba(216,56,67,1.00) 100%);
+    }
+
+.card-body:hover .card-title.card-link-mask{
+    background:rgba(89,121,173,0.85);	
+}
+.cta-section{
+	background-image: -webkit-linear-gradient(0deg,rgba(47,100,167,1.00) 0%,rgba(216,56,67,1.00) 100%);
+    background-image: -moz-linear-gradient(0deg,rgba(47,100,167,1.00) 0%,rgba(216,56,67,1.00) 100%);
+    background-image: -o-linear-gradient(0deg,rgba(47,100,167,1.00) 0%,rgba(216,56,67,1.00) 100%);
+    background-image: linear-gradient(90deg,rgba(47,100,167,1.00) 0%,rgba(216,56,67,1.00) 100%);
+}
+.theme-icon-holder.card-icon-holder.me-2{
+	background:rgba(89,121,173,0.85);
+}
+
+
+input,h3,label,select,option,textarea{
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	margin-top: 3px;
+	margin-bottom: 7px;
+	margin-right: 7px;
+	margin-left: 10px;
+	border-radius: 0px;
+	text-shadow: 0px 0px;
+	color: black;
+	height: 2rem;
+}
+input,label,select,textarea{
+	font-size: 9pt;
+}
+h6{
+	margin-left: 1rem;
+}
+.BFD-form {
+	position: relative;
+	width: 40rem;
+	margin: auto;
+}
+.BFD-form-approval {
+	position: relative;
+	width: 100%;
+	display: inline-flex;
+}
+.order-info,.contact-info{
+	-webkit-box-shadow: 12px 12px 16px 1px rgba(209,28,28,0.20);
+	border: thin solid #BBBBBB;
+	box-shadow: 12px 12px 16px 1px rgba(36,31,31,0.20);
+	margin: auto;
+	border-radius: 7px;
+	background: rgba(0,0,0,0.20);
+}
+.order-info,.contact-info{
+	-webkit-box-shadow: 12px 12px 16px 1px rgba(209,28,28,0.20);
+	border: thin solid #BBBBBB;
+	box-shadow: 12px 12px 16px 1px rgba(36,31,31,0.20);
+	border-radius: 7px;
+	background: rgba(255,255,255,1.00);
+}
+.order-req-details{
+	height: auto;
+	margin-left: 3%;
+	width: 47%;
+	-webkit-box-shadow: 12px 12px 16px 1px rgba(209,28,28,0.20);
+	border: thin solid #BBBBBB;
+	box-shadow: 12px 12px 16px 1px rgba(36,31,31,0.20);
+	border-radius: 7px;
+	background: rgba(255,255,255,1.00);
+}
+.Form-header{
+	position: relative;
+	top: 2rem;
+	margin-left: 14px;
+	margin-bottom: 67px;
+}
+.page{
+	height: 100rem;
+}
+.product-details {
+	height: 5rem;
+	width: 30rem;
+}
+
+.BFD-table-div {
+	width: 100%;
+	display:flex;
+	justify-content: center;
+}
+
+.thead-dark {
+	background:rgba(31,31,31,1.00);
+		color: rgba(255,255,255,1.00);
+}
+tr:hover:not(.columns){
+	background-color:rgba(216,56,66,1.00);
+	color:white;
+}
+tr:nth-child(even){
+	background: rgba(47,100,167,1.00);	
+	}
+.btn-table {
+	cursor: pointer;
+	margin-left: 14px;
+	text-decoration: none;
+	padding-top: 2px;
+	padding-right: 4px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	border-radius: 2px;
+	background: white;
+	box-shadow: 1px 1px 12px #B7B7B7;
+	-webkit-box-shadow: 1px 1px 12px #B7B7B7;
+}
+a.btn-table.active{
+	background: rgba(207,207,207,1.00);
+}
+.panel.show{
+	display: table-row;
+}
+td.panel {
+	background: rgba(31,31,31,0.51);
+	margin-left: 1rem;
+	padding-left: 2rem;
+	border-radius: 0 0 6px 6px;
+	overflow: hidden;
+	display: table-row;
+}
+
+.accordion-label{
+	position: relative;
+	right: 1rem;
+	width: 100%;
+	height: 5rem;
+	align-content: center;
+	color: black;
+	cursor: pointer;
+	font-weight: 500;
+	transition: background 0.1s;
+}
+.accordion-label:hover{
+	background: rgba(171,171,171,1.00);
+}
+.accordion-label::after{
+	content: "";
+	position: absolute;
+	top:50%;
+	left: 40%;
+	align-content: center;
+	transform: translateY(-50%);
+	width:14px;
+	height: 7px;
+	background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%2300000099;" /></svg>');
+	background-size: contain;
+	transition: transfrom 0.4s;
+}
+.accordion-content{
+	display: none;
+}
+.accordion-input:checked ~ .accordion-content {
+	display: table-row;
+}
+
+.d-block {
+	max-width: 40%;
+}
+
+.carousel-caption {
+background: rgba(0,0,0,0.43);
+	border-radius: 14px;
+}
+
+.products-line {
+	width: 33%;
+}

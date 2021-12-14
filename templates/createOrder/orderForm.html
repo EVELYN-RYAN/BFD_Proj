@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}  
+
+{% block body %}
+<div class="page" style="background: url('{% static 'img/Diamond.png'%}');background-size: 100%;background-repeat: no-repeat;">
+	<h1 class="Form-header">Order Form</h1>
+	
+    <form class="BFD-form">
+		<div class="contact-info">
+			<h3>Contact Info:</h3>
+			<br>
+			<h6>Full Name <b style="color: red">*</b></h6>
+
+			<input type="text" placeholder="First Name">
+			<input type="text" placeholder="Last Name">
+			<br>
+			<h6>Contact <b style="color: red">*</b></h6>
+			<input type="email" placeholder="Email" size="30">
+			<input type="tel" placeholder="Phone">
+			<br>
+			<input type="tel" placeholder="Company"size="40">
+			<br>
+			
+		</div>
+		<br><br>
+		
+		<div class="order-info">
+			<h3>Order Info:</h3>
+			<input type="text" placeholder="Give your project a name" size="50" minlength="30"><b style="color: red">*</b>
+			<br>
+			<label for="Product Type">Product Type:</label>
+			<select name="Product Type">File Type
+				<option value="Banners">Banners</option>
+				<option value="Signs">Signs</option>
+				<option value="Paper Prints">Paper Prints</option>
+				<option value="Vinyl Prints">Vinyl Prints</option>
+				<option value="Logos & Branding">Logos & Branding</option>
+				<option value="Displays">Displays</option>
+				<option value="T-shirts & Embroidery">T-shirts & Embroidery</option>
+				<option value="Logo Promo Items">Logo Promo Items</option>
+				<option value="Vehical Graphics">Vehical Graphics</option>
+				<option value="Packing">Packing</option>
+				<option value="Labels">Labels</option>
+				<option value="Stickers">Stickers</option>
+				<option value="Fulfillment & Shipping">Fulfillment & Shipping</option>
+				<option value="Advertising">Advertising</option>
+				<option value="Other">Other</option>
+			</select>
+			<b style="color: red">*</b>
+			<input type="number" name="qty" min="1" max="9999" placeholder="qty"><b style="color: red">*</b>
+			<br>
+			
+			<textarea class="product-details" size="200" type="textarea" placeholder="Please describe additional project details"></textarea>
+			
+			<br>
+			<label for="DueDate">When do you need this done by?</label>
+			<input name="DueDate" type="datetime-local">
+			<br>
+			<label for="Attachment">Attach "Project Name" Files" (optional)</label>
+
+			<input for="Attachment" type="file"> <br>
+			<button type="submit">Submit</button>
+		</div>
+	</form>
+   
+ </div>	
+ {% endblock body %}
