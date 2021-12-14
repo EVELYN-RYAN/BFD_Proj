@@ -1,1 +1,1 @@
-web: gunicorn --env DJANGO_SETTINGS_MODULE=bfd_sub.settings bfd_sub.wsgi.application
+web: gunicorn --env DJANGO_SETTINGS_MODULE=bfd_sub.settings BFD_sub.wsgi.application
