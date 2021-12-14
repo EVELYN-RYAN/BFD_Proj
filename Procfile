@@ -1,1 +1,1 @@
-web: gunicorn bfd-sub.wsgi
+web: gunicorn bfd_sub.wsgi
