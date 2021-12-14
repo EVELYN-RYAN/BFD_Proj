@@ -28,6 +28,12 @@
     </tr>
   </thead>
   <tbody>
+
+<!-- for loop of all orders that aren't marked as "Waiting Approval" -->
+        
+    {% for order in "awesome" %} 
+    
+      
 	 <tr>
       <td>T9823</td>
       <td>1/4</td>
@@ -52,14 +58,14 @@
     <tr>
       <td colspan="9">
 <!--		  make sure to make all of the id = "T0" into "T{{i}}" with a loop-->
-        <button type="button" id="0" aria-expanded="false" onclick="toggle(this.id,'#T0');" aria-controls="T0">
+        <button type="button" id="{{ forloop.counter0 }}" aria-expanded="false" onclick="toggle(this.id,'#T{{ forloop.counter0 }}');" aria-controls="T{{ forloop.counter0 }}">
           <svg xmlns="\http://www.w3.org/2000/svg&quot;" viewBox="0 0 80 80" focusable="false"><path d="M70.3 13.8L40 66.3 9.7 13.8z"></path></svg>
           Ticket# Details…
         </button>
       </td>
     </tr>
 <!--	  apply the T{{i}} here too-->
-    <tr id="T0" class="hidden">
+    <tr id="T{{ forloop.counter0 }}" class="hidden">
       <td colspan="9">Customer Notes: {{notes}} <br>
 		  			  Designer Notes: {{notes}} <br>
 		              Manager Notes: {{notes}} <br>
@@ -67,43 +73,7 @@
 		  			  <textarea placeholder="Production place notes here"></textarea>
 	  </td> 
     </tr>
-	<tr>
-      <td>T9823</td>
-      <td>1/4</td>
-      <td>James Harden</td>
-      <td>Heat of the NBA</td>
-      <td>
-				  <select name="ticket-status">
-				
-						<option value="Making Mockup">Making Mockup</option>
-						<option value="Pending Mockup Approval">Pending Mockup Approval</option>
-						<option value="Production Prep">Production Prep</option>
-						<option value="In Production">In Production</option>
-						<option value="Finalizing">Finalizing</option>
-					    <option value="Finished">Finished</option>
-   				  </select>
-	  </td>
-		<td>Banner</td>
-		<td>20</td>
-		<td>1-12-2022</td>
-		<td><input name="save" type="checkbox"></td>
-    </tr>
-    <tr>
-      <td colspan="9">
-        <button type="button" id="1" aria-expanded="false" onclick="toggle(this.id,'#T1');" aria-controls="T1">
-          <svg xmlns="\http://www.w3.org/2000/svg&quot;" viewBox="0 0 80 80" focusable="false"><path d="M70.3 13.8L40 66.3 9.7 13.8z"></path></svg>
-          Ticket# Details…
-        </button>
-      </td>
-    </tr>
-    <tr id="T1" class="hidden">
-      <td colspan="9">Customer Notes: notes <br>
-		  			  Designer Notes: notes <br>
-		              Manager Notes: notes <br>
-		  			  Mockup: &nbsp; <a href="File"></a> <br>
-	  </td> 
-    </tr>
-    
+    {% endfor %}
   </tbody>
 </table>
 	
