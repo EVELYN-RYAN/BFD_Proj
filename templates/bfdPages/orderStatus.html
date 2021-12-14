@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="page" style="background: url('assets/images/Diamond.png');background-size: 100%;background-repeat: no-repeat;">
+	<h3 class="Form-header">My Order Status</h3>
+	
+	 <form class="BFD-form">
+		<div class="contact-info">
+			<h5>Order Number:</h5>
+	
+			<input class="search-order"type="text" placeholder="ex. T63584">
+			<a class ="search-submit" type="submit" href="">Search</a>
+		</div>
+		<br><br>
+		
+		<div class="order-info">
+			<h6>Order Number</h6>
+			<br>
+			<div>
+				<p>
+				Full Name <br>
+				Project Name &nbsp; Product Type &nbsp; Qty: QTY
+				</p>
+				
+				<br>
+<!--				This should be a place where if the Product is still waiting we display it as orange but if it is waiting on them we show it as green-->
+				<h6>Status : <tx style="color: orange;">Status</tx></h6>
+				
+			</div>
+		</div>
+	</form>
+	
+   
+</div>
+
+{% endblock body %}

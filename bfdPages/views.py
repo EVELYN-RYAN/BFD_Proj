@@ -18,5 +18,10 @@ def productPageView(request):
 def createorderPageView(request) :
     return render(request, "createOrder/orderForm.html")
 
+
 def blogPageView(request) :
-    return render(request,"bfdpages/blogs.html")
+    return render(request, "bfdPages/blogs.html")
+
+
+def orderStatusPageView(request) :
+    return render(request, "bfdPages/orderStatus.html")

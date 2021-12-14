@@ -4,7 +4,7 @@ from django.urls import path
 #This is accessing the views methods/functions we wrote
 from .views import indexPageView, createorderPageView
 from .views import aboutPageView
-from .views import productPageView,blogPageView
+from .views import productPageView,blogPageView,orderStatusPageView
 
 #Create the paths
 
@@ -14,6 +14,6 @@ urlpatterns = [
     path('products/',productPageView, name="Products"),
     path('createOrder/',createorderPageView,name="CreateOrder"),
     path('blogs/',blogPageView, name="Blogs"),
-    
+    path('orderStatus/',orderStatusPageView, name="MyOrder"),
 ]
 

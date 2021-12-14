@@ -18,5 +18,4 @@ urlpatterns = [
     path("acceptorder/", AcceptOrderPageView, name="acceptorder"),
     path("storeticket/", storeTicketPageView, name="storeticket"),
     path("ticketsummary/", TicketsSummaryView, name="ticketsummary"),
-
 ]
