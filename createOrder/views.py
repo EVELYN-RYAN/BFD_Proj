@@ -17,24 +17,24 @@ def storeOrderPageView(request):
     if request.method == 'POST':
         new_order = Create_Order()
 
-        new_order.cust_first_name = request.POST.get('fname')
-        new_order.cust_last_name = request.POST.get('lname')
-        new_order.cust_email = request.POST.get('email')
-        new_order.cust_phone = request.POST.get('phone')
-        new_order.product_name = request.POST.get('pName')
-        new_order.product_type = request.POST.get('pCategory')
-        new_order.quantity = request.POST.get('amount')
-        new_order.order_description = request.POST.get('description')
-
+        new_order.cust_first_name = request.POST.get('cust_first_name')
+        new_order.cust_last_name = request.POST.get('cust_last_name')
+        new_order.cust_email = request.POST.get('cust_email')
+        new_order.cust_phone = request.POST.get('cust_phone')
+        new_order.product_name = request.POST.get('product_name')
+        new_order.product_type = request.POST.get('product_type')
+        new_order.quantity = request.POST.get('qty')
+        new_order.order_description = request.POST.get('order_description')
+ 
     # Save the ticket information record which will generate the autoincremented id
     new_order.save()
     data = Create_Order.objects.all()
-
+ 
     # Assign the list of employee records to the dictionary key "our_emps"
     context = {
         "new_orders": data
     }
-    return render(request, 'trackOrders/displayOrders.html', context)
+    return render(request, 'trackOrders/approveList.html', context)
 
 def deleteOrder(request, custID):
     delete_order = Create_Order.objects.filter(id=custID)

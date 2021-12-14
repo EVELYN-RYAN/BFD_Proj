@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="page" style="background: url('assets/images/Diamond.png');background-size: 100%;background-repeat: no-repeat;">
+
+	<h2 class="form-header">Waiting Approval</h2>
+		<p style="position:fixed;top:25%;left:15%;">No more orders pending for approval</p>
+		<div>
+
+			{% for order in new_orders %}           
+
+			<form class="BFD-form-approval">
+				<div class="order-req-details">
+					<h3>Order Request Details</h3>
+					<br>
+					<h6>
+						Customer First Name: {{order.cust_first_name}}
+						<br>
+						Customer Last Name: {{order.cust_last_name}}
+						<br>
+						Phone: {{order.cust_phone}}
+						<br>
+						Email: {{order.cust_email}}
+						<br>
+						Product Type: {{order.product_name}}
+						<br>
+						Quantity: {{order.quantity}}
+						<br>
+						Details: {{order.order_description}}
+					</h6>
+				</div>
+				<div class="order-info">
+					<h3>Approval Form:</h3>
+
+
+					<label for="approve"><input name="approve" type="radio">Approve</label>
+					<a  href="{% url 'deleteOrder' custID=order.id %}">Decline</a>
+
+
+					<br>
+
+					&nbsp;&nbsp;&nbsp;$<input size="30" type="box" placeholder="Project quote">
+
+					<br>
+					<label for="DueDate">Estimated finish date?</label>
+					<input name="DueDate" type="datetime-local">
+					<br>
+					<textarea class="product-details" size="200" type="textarea" placeholder="Notes for customer"></textarea>
+					<br>
+					<a class="approve" type="submit">Submit </a>
+				</div>
+			</form>
+		
+			{% endfor %} 
+		
+		</div>
+	
+   
+ </div>	
+{% endblock body %}

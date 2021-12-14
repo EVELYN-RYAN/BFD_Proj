@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'BFD_sub.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'BFD_DB_test',
+        'NAME': 'BFD_DB',
         'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': 'localhost',

@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("bfdPages.urls")),
     path('', include("createOrder.urls")),
+    path('', include("trackOrders.urls")),
 ]
