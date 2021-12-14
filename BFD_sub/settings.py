@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'bfd_sub.urls'
+ROOT_URLCONF = 'BFD_sub.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bfd_sub.wsgi.application'
+WSGI_APPLICATION = 'BFD_sub.wsgi.application'
 
 
 # Database
@@ -135,7 +135,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'bfd_sub/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'BFD_sub/static')]
 
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
