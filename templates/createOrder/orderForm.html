@@ -3,10 +3,10 @@
 
 {% block body %}
 <div class="page" style="background: url('{% static 'img/Diamond.png'%}');background-size: 100%;background-repeat: no-repeat;">
-	<h1 class="Form-header">Order Form</h1>
-	<form action="{% url 'storeorder' %}" method="POST" class="BFD-form">
+	<h2 class="form-header">Order Form</h2>
+	
+    <form action="{% url 'storeorder' %}" method="POST" class="BFD-form">
 		{% csrf_token %}
-
 		<div class="contact-info">
 			<h3>Contact Info:</h3>
 			<br>
