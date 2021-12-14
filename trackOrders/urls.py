@@ -6,7 +6,7 @@ from .views import findOrdersPageView, searchOrdersPageView
 from .views import EditOrderPageView
 from .views import AcceptOrderPageView
 from .views import storeTicketPageView
-from .views import TicketsSummaryView
+from .views import TicketsSummaryView,approveListView
 
 
 # we create the path with this syntax
@@ -18,4 +18,5 @@ urlpatterns = [
     path("acceptorder/", AcceptOrderPageView, name="acceptorder"),
     path("storeticket/", storeTicketPageView, name="storeticket"),
     path("ticketsummary/", TicketsSummaryView, name="ticketsummary"),
+    path("approveList/",approveListView,name="approveList")
 ]

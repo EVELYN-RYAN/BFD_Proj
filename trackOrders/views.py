@@ -81,4 +81,7 @@ def storeTicketPageView(request):
 def TicketsSummaryView(request):
     return render(request, "trackOrders/ticketStatusList.html")
 
+def approveListView(request):
+    return render(request, "trackOrders/approveList.html")
+
 

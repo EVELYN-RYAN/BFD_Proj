@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="page" style="background: url('assets/images/Diamond.png');background-size: 100%;background-repeat: no-repeat;">
+	<h1 class="Form-header">Waiting Approval</h1>
+		<p style="position:fixed;top:25%;left:15%;">No more orders pending for approval</p>
+		<div>
+			<form class="BFD-form-approval">
+				<div class="order-req-details">
+					<h3>Order Request Details</h3>
+					<br>
+					<h6>
+						Customer Name: Customer name
+						<br>
+						Phone: Phone
+						<br>
+						Email: Email
+						<br>
+						Product Type: type
+						<br>
+						Due date: 
+						<br>
+						Details: 
+						<br>
+						Files: File
+						<br>
+						Notes:  Have a wonderful day
+					</h6>
+				</div>
+				<div class="order-info">
+					<h3>Approval Form:</h3>
+
+
+					<label for="approve"><input name="approve" type="radio">Approve</label>
+					<label for="approve"><input name="approve"type="radio">Decline</label><b style="color: red">*</b>
+
+
+					<br>
+
+					&nbsp;&nbsp;&nbsp;$<input size="30" type="box" placeholder="Project quote">
+
+					<br>
+					<label for="DueDate">Estimated finish date?</label>
+					<input name="DueDate" type="datetime-local">
+					<br>
+					<textarea class="product-details" size="200" type="textarea" placeholder="Notes for customer"></textarea>
+				</div>
+			</form>
+		</div>
+	
+   
+ </div>	
+{% endblock body %}
