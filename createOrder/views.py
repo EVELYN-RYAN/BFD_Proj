@@ -34,7 +34,7 @@ def storeOrderPageView(request):
     context = {
         "new_orders": data
     }
-    return render(request, 'trackOrders/displayOrders.html', context)
+    return render(request, 'trackOrders/approveList.html', context)
 
 def deleteOrder(request, custID):
     delete_order = Create_Order.objects.filter(id=custID)

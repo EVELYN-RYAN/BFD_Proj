@@ -5,26 +5,27 @@
 	<h1 class="Form-header">Waiting Approval</h1>
 		<p style="position:fixed;top:25%;left:15%;">No more orders pending for approval</p>
 		<div>
+
+			{% for order in new_orders %}           
+
 			<form class="BFD-form-approval">
 				<div class="order-req-details">
 					<h3>Order Request Details</h3>
 					<br>
 					<h6>
-						Customer Name: Customer name
+						Customer First Name: {{order.cust_first_name}}
 						<br>
-						Phone: Phone
+						Customer Last Name: {{order.cust_last_name}}
 						<br>
-						Email: Email
+						Phone: {{order.cust_phone}}
 						<br>
-						Product Type: type
+						Email: {{order.cust_email}}
 						<br>
-						Due date: 
+						Product Type: {{order.product_name}}
 						<br>
-						Details: 
+						Quantity: {{order.quantity}}
 						<br>
-						Files: File
-						<br>
-						Notes:  Have a wonderful day
+						Details: {{order.order_description}}
 					</h6>
 				</div>
 				<div class="order-info">
@@ -32,7 +33,7 @@
 
 
 					<label for="approve"><input name="approve" type="radio">Approve</label>
-					<label for="approve"><input name="approve"type="radio">Decline</label><b style="color: red">*</b>
+					<a  href="{% url 'deleteOrder' custID=order.id %}">Decline</a>
 
 
 					<br>
@@ -46,6 +47,9 @@
 					<textarea class="product-details" size="200" type="textarea" placeholder="Notes for customer"></textarea>
 				</div>
 			</form>
+		
+			{% endfor %} 
+		
 		</div>
 	
    

@@ -4,21 +4,19 @@
 {% block body %}
 <div class="page" style="background: url('{% static 'img/Diamond.png'%}');background-size: 100%;background-repeat: no-repeat;">
 	<h1 class="Form-header">Order Form</h1>
-	
-    <form class="BFD-form">
+	<form action="{% url 'storeorder' %}" method="POST" class="BFD-form">
+		{% csrf_token %}
+
 		<div class="contact-info">
 			<h3>Contact Info:</h3>
 			<br>
 			<h6>Full Name <b style="color: red">*</b></h6>
-
-			<input type="text" placeholder="First Name">
-			<input type="text" placeholder="Last Name">
+			<input type="text" placeholder="First Name" id='cust_first_name'>
+			<input type="text" placeholder="Last Name" id='cust_last_name'>
 			<br>
 			<h6>Contact <b style="color: red">*</b></h6>
-			<input type="email" placeholder="Email" size="30">
-			<input type="tel" placeholder="Phone">
-			<br>
-			<input type="tel" placeholder="Company"size="40">
+			<input type="email" placeholder="Email" size="30" id='cust_email'>
+			<input type="tel" placeholder="Phone" id='cust_phone'>
 			<br>
 			
 		</div>
@@ -26,10 +24,10 @@
 		
 		<div class="order-info">
 			<h3>Order Info:</h3>
-			<input type="text" placeholder="Give your project a name" size="50" minlength="30"><b style="color: red">*</b>
+			<input type="text" placeholder="Give your project a name" size="50" minlength="30"id='product_name'><b style="color: red">*</b>
 			<br>
-			<label for="Product Type">Product Type:</label>
-			<select name="Product Type">File Type
+			<label for="Product Type" >Product Type:</label>
+			<select name="Product Type" id="product_type">File Type
 				<option value="Banners">Banners</option>
 				<option value="Signs">Signs</option>
 				<option value="Paper Prints">Paper Prints</option>
@@ -47,18 +45,13 @@
 				<option value="Other">Other</option>
 			</select>
 			<b style="color: red">*</b>
-			<input type="number" name="qty" min="1" max="9999" placeholder="qty"><b style="color: red">*</b>
+			<input type="number" name="qty" min="1" max="9999" placeholder="qty" id='quantity'><b style="color: red">*</b>
 			<br>
 			
-			<textarea class="product-details" size="200" type="textarea" placeholder="Please describe additional project details"></textarea>
+			<textarea class="product-details" size="200" type="textarea" placeholder="Please describe additional project details" id='order_description'></textarea>
 			
 			<br>
-			<label for="DueDate">When do you need this done by?</label>
-			<input name="DueDate" type="datetime-local">
-			<br>
-			<label for="Attachment">Attach "Project Name" Files" (optional)</label>
 
-			<input for="Attachment" type="file"> <br>
 			<button type="submit">Submit</button>
 		</div>
 	</form>
