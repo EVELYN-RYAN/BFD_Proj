@@ -17,6 +17,7 @@
 
 
 {% block body %}
+<div class="BFD-table-div">
 <table>
     <tr>
         <th style="text-align: center;" >Edit</th>
@@ -25,7 +26,7 @@
         <th style="text-align: center;">Product Name</th>
         <th style="text-align: center;">Quanity</th>
         <th style="text-align: center;">Order Description</th>
-        <th style="text-align: center;">Confirm</th>
+        <th style="text-align: center;">Delete</th>
     </tr>
 
 {% for order in new_orders %}           
@@ -54,7 +55,7 @@
     </tr>
 {% endfor %} 
 </table>
-
+</div>
 
 {% endblock%}
 

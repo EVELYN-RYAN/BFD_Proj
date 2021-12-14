@@ -238,7 +238,7 @@ class order_detail(models.Model):
 # TABLE 9 ################################################### ticket
 
 
-# TABLE 10...practice ################################################### CREATE_ORDER
+# TABLE 10...practice ################################################### CREATE_ORDER 
 
 
 class Create_Order(models.Model):
