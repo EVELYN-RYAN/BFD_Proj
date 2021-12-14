@@ -79,4 +79,6 @@ def storeTicketPageView(request):
 
 ############## this is a display of the unconfirmed orders ##############
 def TicketsSummaryView(request):
-    return render(request, "trackOrders/displayOrders.html")
+    return render(request, "trackOrders/ticketStatusList.html")
+
+
